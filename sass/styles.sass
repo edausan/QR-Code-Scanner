@@ -1,0 +1,290 @@
+body
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 16px
+    margin: 0
+    padding: 0
+
+*
+    margin: 0
+    padding: 0
+
+$blue: #5588EE
+
+=clear()
+    &::after
+        content: ''
+        display: table
+        clear: both
+
+.container
+    padding: 0 15px
+    box-sizing: border-box
+    width: 100%
+    max-width: 1170px
+    margin: 0 auto 
+    overflow: hidden
+
+.row
+    margin: 0 -15px
+
+input
+    &:focus
+        outline: none
+        box-shadow: none
+
+.navbar
+    width: 100%
+    background: $blue
+    margin-bottom: 50px
+
+    ul 
+        list-style: none 
+        padding: 0
+        
+        display: flex
+        width: 50%
+        margin: 0 auto 
+
+        li 
+            flex: 1
+            text-align: center
+            a 
+                padding: 20px
+                text-decoration: none 
+                color: white
+                display: block
+                
+                &.active
+                    background: darken($blue, 10%)
+
+.create-wrapper
+    width: 50%
+    margin: 0 auto
+    padding: 20px
+    box-sizing: border-box
+
+    p, 
+    input,
+    button
+        display: block
+        width: 100%
+        box-sizing: border-box
+
+    p 
+
+        
+    button,
+    input
+        border: 1px solid #cccccc
+        margin-bottom: 10px 
+        border-radius: 3px
+        padding: 10px
+    p 
+        text-align: center
+        margin-bottom: 20px
+        color: $blue
+
+    input
+        transition: 300ms ease
+
+        &:focus
+            border-color: $blue
+            color: $blue
+
+
+    button 
+        box-shadow: 0 2px 5px rgba(black, .1)
+        transition: 300ms ease
+        cursor: pointer
+        background: $blue
+        border-color: darken($blue, 10%)
+        color: white
+
+        &:hover
+            box-shadow: 0 5px 15px rgba(black, .3)
+            background: darken($blue, 10%)
+
+    .price
+        +clear 
+        border: 1px solid #cccccc
+        overflow: hidden
+        border-radius: 3px 
+        margin-bottom: 10px
+
+        label
+            float: left
+            width: 10%
+            padding: 10px 0px
+            box-sizing: border-box
+            text-align: center
+            border-radius: 3px 0 0 3px
+            border-right: none
+            min-height: 43px
+            color: #888888
+            transition: 300ms ease
+            font-size: 1em
+            vertical-align: middle
+            margin: 0
+            
+        input
+            vertical-align: middle
+            border-radius: 0 3px 3px 0
+            float: right 
+            width: 90%
+            margin-bottom: 0
+            border: none
+            border-left: 1px solid #cccccc
+
+            &:focus ~ label 
+                border-color: $blue
+                color: $blue
+
+
+.qr-result
+    width: 50%
+    margin: 0 auto 
+
+    img
+        width: 50%
+        display: block
+        margin: 0 auto 
+
+.wrapper
+    padding: 20px
+
+
+.button-group
+    border-bottom: 2px solid #eeeeee
+    
+    .qr-buttons
+        padding: 10px 20px 
+        border-style: none
+        border: 1px solid #cccccc
+        border-radius: 3px
+        box-shadow: 0 2px 5px rgba(black, .1)
+        transition: 300ms ease
+        cursor: pointer
+
+        &#capture-qr
+            background: $blue
+            color: white 
+            border-color: darken($blue, 10%)
+            font-size: 3em
+            margin: 0 auto 
+            display: block 
+
+        &:hover
+            box-shadow: 0 5px 15px rgba(black, .3)
+
+        &:focus, &:link
+            box-shadow: none
+            outline: none
+
+input 
+    padding: 10px
+    padding-left: 0
+    font-size: 1em
+    border-style: none
+
+    &:disabled
+        background: transparent 
+        color: black
+        
+
+.results-wrapper
+    margin: 0 -20px
+    border-bottom: 2px solid #eeeeee
+
+    .notif
+        text-align: center
+        text-transform: uppercase
+        color: #cccccc
+        font-weight: 600
+        padding: 20px
+        margin: 0
+
+    .col-title
+        border-bottom: 2px solid #eeeeee
+        padding-bottom: 10px
+        display: flex
+        width: 100%
+        margin-bottom: 10px
+        color: #777777
+        font-size: 1em
+        color: $blue
+        span 
+            flex: 1
+    .item 
+        box-sizing: border-box
+        width: 100%
+        // display: flex 
+        +clear
+        
+        padding: 0 15px
+
+        &:nth-child(2n+2)
+            background: whitesmoke
+
+        input
+            width: 33.333333333%
+            float: left
+            box-sizing: border-box
+            // flex: 1  
+            
+.results
+    max-height: 369px
+    overflow-y: auto 
+
+.total-wrapper
+    // display: flex 
+    width: 100%
+    +clear
+
+    label,
+    input 
+        width: 33.333333333%
+        font-size: 1.5em
+        font-weight: 600
+        border-style: none 
+        color: $blue
+        float: left
+        box-sizing: border-box
+
+    label 
+        padding: 10px
+        
+        
+
+
+@media all and (max-width: 768px),
+print 
+    .create-wrapper
+        width: 100%
+
+        .price
+            label 
+                width: 15%
+            input 
+                width: 85%
+
+    .qr-result
+        width: 100%
+
+    .total-wrapper
+        padding-left: 0
+        input,
+        label 
+            font-size: 1.2em
+
+    .col-title
+        padding-left: 10px
+
+    .results
+        max-height: 205px
+        overflow-y: auto 
+
+    .qr-result
+        width: 90%
+
+        img
+            width: 100%

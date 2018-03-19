@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create QR Code</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<body>
+    <section class="container">
+        <article class="row">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Scan</a></li>
+                    <li><a class="active" href="create.html">Create</a></li>
+                </ul>
+            </nav>
+
+            <section class="create-wrapper">
+                <p>Create Product QR Code</p>
+
+                <input type="text" placeholder="Product Name" id="prod-name">
+                <div class="price">
+                    
+                    <input type="text" placeholder="Price" id="prod-price">
+                    <label for="">PHP</label>
+                </div>
+                
+                <button class="create-btn">Create</button>
+            </section>
+
+            <section class="qr-result" id="qrimage">
+            </section>
+        </article>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/create.js"></script>
+</body>
+
+</html>

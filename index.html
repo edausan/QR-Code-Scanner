@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QR Scanner</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+    <section class="container">
+        <article class="row">
+            <nav class="navbar">
+                <ul>
+                    <li><a class="active" href="index.html">Scan</a></li>
+                    <li><a href="create.html">Create</a></li>
+                </ul>
+            </nav>
+
+            
+        </article>
+
+        <article class="row">
+            <section class="wrapper results-wrapper">
+                <h5 class="col-title"><span>Items</span> <span>Price</span> <span>Quantity</span></h5>
+                <p for="" class="notif">your cart is empty.</p>
+                <section class="results"></section>
+            </section>
+
+            <section class="wrapper total-wrapper">
+                <label for="">Total</label>
+                <input type="text" value="Php 0.00" id="total" disabled>
+                <input type="text" value="0" id="total-quantity" disabled>
+            </section>
+
+            <section class="wrapper button-group">
+                <button class="qr-buttons" id="capture-qr">Capture QR</button>
+                <button class="qr-buttons" id="go-btn" hidden>Go</button>
+                <input id="file-input" type="file" accept="image/*" capture="environment"  tabindex="-1" hidden>
+            </section>
+        </article>
+    </section>
+    
+
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/qr_packed.js"></script>
+    <script src="js/qr.js"></script>
+
+</body>
+</html>
